@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "kitra_game",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

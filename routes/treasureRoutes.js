@@ -38,10 +38,8 @@ router.get("/find-treasures", async (req, res) => {
       searchDistance
     );
     // If prizeValue is provided, filter treasures by minimum prize value
-    if (prizeValue) {
-      const prizeValueInt = parseInt(prizeValue);
-      treasures = await filterTreasuresByValue(treasures, prizeValueInt);
-    }
+    const prizeValueInt = parseInt(prizeValue);
+    treasures = await filterTreasuresByValue(treasures, prizeValueInt);
     if (treasures.length === 0) {
       return res.json({ message: "No treasures found." });
     }

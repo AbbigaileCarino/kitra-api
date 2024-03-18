@@ -13,6 +13,7 @@ npm install express
 npm install mysql2
 npm install sequelize
 npm install csv-parser
+npm install nodemon
 ```
 
 Make sure that you have mysql and create a database named kitra_game
@@ -22,14 +23,17 @@ Locate the models/model.js and insert your credentials
 npx sequelize db:migrate
 npx sequelize db:seed:all
 ```
+Check if all the table have been populated. 
 If the data did not seed correctly you can seed each file individually with 
 ```bash 
-npx sequelize db:seed --seed [name of seeder]
+npx sequelize db:seed --seed 20240313125813-create-treasure
+npx sequelize db:seed --seed 20240313125826-create-user
+npx sequelize db:seed --seed 20240313125841-create-money-value
 ```
 
 ## Usage
 To run the API input the command 
-npm app.js
+```nodemon app.js```
 Go to postman and paste the URL 
 ```http://localhost:3000/api/users/login```
 Choose any user from the Users table to login
